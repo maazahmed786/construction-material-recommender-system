@@ -117,7 +117,7 @@
             });
         });
 
-        // Recommend Phases Data Display
+         
         const phaseBtn = document.getElementById('recommendPhaseBtn');
         const phaseResult = document.getElementById('phaseResult');
 
@@ -149,7 +149,7 @@
                     html += '<table class="phase-table"><tr><th>Phase</th><th>Recommended Material/Description</th><th>Action</th></tr>';
                     for (const phase of phasesOrder) {
                         const value = data.phases_data[phase];
-                        const phaseId = phase.replace(/\s+/g, '_'); // unique id for result
+                        const phaseId = phase.replace(/\s+/g, '_'); 
                         html += `<tr>
                             <td>${phase}</td>
                             <td>${value}</td>
@@ -171,7 +171,7 @@
             });
         }
 
-        // Attach event handlers to all "Check Availability" buttons
+         
         function attachAvailabilityHandlers() {
             const buttons = document.querySelectorAll('.check-btn');
             buttons.forEach(btn => {
@@ -180,9 +180,9 @@
                     const material = decodeURIComponent(btn.getAttribute('data-material'));
                     const resultSpan = document.getElementById('avail_' + phase.replace(/\s+/g, '_'));
                     resultSpan.innerHTML = "Checking...";
-                    // Simulate availability check, replace with real API if available
+                    
                     setTimeout(() => {
-                        // For demonstration, randomly available/unavailable
+                       
                         const available = Math.random() > 0.5;
                         if (available) {
                             resultSpan.innerHTML = `<span style="color:green;">Available</span>`;
