@@ -5,7 +5,7 @@ import numpy as np
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"   
+app.secret_key = "secret_key"   
 with open("construction_materials_model.pkl", "rb") as f:
     model = pickle.load(f)
 with open("budget_mapping.pkl", "rb") as f:
