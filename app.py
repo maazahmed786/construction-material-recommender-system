@@ -27,7 +27,7 @@ phase_cols = [
     "Specialized Works"
 ]
 
-# --- NEW: Database check function ---
+ 
 def check_material_in_database(material_name):
     """Check if a material is present in the materials table."""
     conn = sqlite3.connect('materials.db')
@@ -91,7 +91,7 @@ def recommend_phases():
     phases_data = {col: row.iloc[0][col] for col in phase_cols}
     return jsonify({'phases_data': phases_data})
 
-# --- NEW: Check Availability API ---
+ 
 @app.route('/check_availability', methods=['POST'])
 def check_availability():
     data = request.get_json()
